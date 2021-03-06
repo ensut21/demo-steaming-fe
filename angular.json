@@ -36,6 +36,14 @@
             "scripts": []
           },
           "configurations": {
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -71,6 +79,10 @@
             "browserTarget": "live-streming:build"
           },
           "configurations": {
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "live-streming:build:hmr"
+            },
             "production": {
               "browserTarget": "live-streming:build:production"
             }
@@ -127,5 +139,8 @@
       }
     }
   },
-  "defaultProject": "live-streming"
+  "defaultProject": "live-streming",
+  "cli": {
+    "analytics": "0b715ac3-4142-44d9-b02c-eafa00168a72"
+  }
 }
