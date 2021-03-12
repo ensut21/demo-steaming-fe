@@ -23,10 +23,8 @@ export class LiveStreamingComponent implements OnInit {
 
   async startStreaming() {
     const displayMediaOptions = {
-      video: {
-        cursor: "never"
-      },
-      audio: false
+      audio: true,
+      video: true
     };
 
     try {
@@ -37,7 +35,7 @@ export class LiveStreamingComponent implements OnInit {
 
       this.recorder = new RecordRTC(stream, {
         type: 'video',
-        mimeType: 'video/webm',
+        mimeType: 'video/webm;codecs=h264',
         timeSlice: 1000,
         ondataavailable: (blob) => {
           $.onDataAvailable(blob);

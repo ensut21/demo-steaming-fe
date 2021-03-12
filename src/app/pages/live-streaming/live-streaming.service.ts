@@ -13,6 +13,6 @@ export class LiveStreamingService {
 
   // EMITTER
   public sendBlob(blob: Blob) {
-    this.socket.emit('recordedChunk', { blob: blob });
+    this.socket.emit('recordedChunk', blob);
   }
 }
